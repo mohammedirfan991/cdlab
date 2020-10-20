@@ -187,9 +187,16 @@ int main(){
 		}
 	}
 	printf("\n");
+        	// find and print all transitions
+	for (int i = 0; i < nextPartitionIndex; i++){
+		for (int j = 0; j < 26; j++) {
+			if (partitionTransitionMap[i][j] != -1){
+				for (int k = 0; k < nextPartitionIndex; k++){
+					if ((P[k] & (1 << partitionTransitionMap[i][j])) != 0){
+						printf("%d %c %d\n", i, j + 'a', k);
 
 
-
+					}
 					}
 				}
 			}
